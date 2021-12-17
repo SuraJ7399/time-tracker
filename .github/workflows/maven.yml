@@ -24,3 +24,5 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Testing with Gitleaks
+      run: wget https://github.com/zricethezav/gitleaks/releases/download/v8.2.1/gitleaks_8.2.1_linux_armv6.tar.gz && tar -xvf *.tar.gz && rm !(gitleaks) && sudo mv gitleaks /usr/bin/ && gitleaks detect
